@@ -232,7 +232,7 @@ function App() {
 					}}
 					title={hex.label}
 				>
-					<span className='text-white font-bold text-xl drop-shadow-lg w-[90%]'>
+					<span className='text-white font-bold text-xl drop-shadow-lg w-[90%] -rotate-[30deg]'>
 						{hex.label}
 					</span>
 				</button>
