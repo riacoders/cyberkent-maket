@@ -16,13 +16,13 @@ interface HexagonArea {
 const initialHexagonAreas: HexagonArea[] = [
 	{
 		id: 1,
-		label: 'CYBERENERGIYA',
+		label: 'CYBERKENT REKLAMA PANELLARI',
 		x: 490,
 		y: 140,
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/shes',
+		api: 'http://172.16.200.20:5000/control/airaport/jadval',
 	},
 	{
 		id: 2,
@@ -32,37 +32,41 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/elektr',
+
+		api: 'http://172.16.200.20:5000/control/temiryol/elektr',
 	},
 	{
 		id: 3,
-		label: 'CYBERKENT REKLAMA PANELLARI',
+		label: 'CYBERENERGIYA',
 		x: 488,
 		y: 337,
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/antena',
+
+		api: 'http://172.16.200.20:5000/control/temiryol/poyezd',
 	},
 	{
 		id: 4,
-		label: 'CYBERPIZZA',
+		label: "CYBERKENT AVTOMIBIL YO'LLARI",
 		x: 318,
 		y: 438,
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/chiroq',
+
+		api: 'http://172.16.200.20:5000/control/temiryol/jadval',
 	},
 	{
 		id: 5,
-		label: "CYBERKENT AVTOMIBIL YO'LLARI",
+		label: 'CYBERPIZZA',
 		x: 490,
 		y: 534,
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/airaport/elektr',
+
+		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
 	},
 	{
 		id: 6,
@@ -72,7 +76,8 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/airaport/jadval',
+
+		api: 'http://172.16.200.20:5000/control/tog/elektr',
 	},
 	{
 		id: 7,
@@ -82,7 +87,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
+		api: 'http://172.16.200.20:5000/control/tog/shes',
 	},
 	{
 		id: 8,
@@ -92,7 +97,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/temiryol/jadval',
+		api: 'http://172.16.200.20:5000/control/airaport/elektr',
 	},
 	{
 		id: 9,
@@ -102,7 +107,8 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/temiryol/poyezd',
+
+		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
 	},
 	{
 		id: 10,
@@ -112,7 +118,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/temiryol/elektr',
+		api: 'http://172.16.200.20:5000/control/tog/chiroq',
 	},
 	{
 		id: 11,
@@ -122,7 +128,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
+		api: 'http://172.16.200.20:5000/control/tog/antena',
 	},
 	{
 		id: 12,
@@ -140,7 +146,7 @@ function App() {
 	const [hexagonAreas, setHexagonAreas] = useState<HexagonArea[]>([])
 	const [hoveredHex, setHoveredHex] = useState<number | null>(null)
 	const [activeHex, setActiveHex] = useState<number | null>(13)
-	const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(false)
 
 	useEffect(() => {
 		const savedStatuses = localStorage.getItem('hexagonStatuses')
