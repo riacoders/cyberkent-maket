@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import LoadingScreen from './components/loading-screen'
+import { motion } from 'framer-motion'
 
 interface HexagonArea {
 	id: number
@@ -138,6 +140,7 @@ function App() {
 	const [hexagonAreas, setHexagonAreas] = useState<HexagonArea[]>([])
 	const [hoveredHex, setHoveredHex] = useState<number | null>(null)
 	const [activeHex, setActiveHex] = useState<number | null>(13)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		const savedStatuses = localStorage.getItem('hexagonStatuses')
@@ -194,49 +197,96 @@ function App() {
 	}
 
 	return (
-		<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1d43d8] via-[#DC2E56] to-[#3451C3]'>
-			{hexagonAreas.map(hex => (
-				<button
-					key={hex.id}
-					onClick={() => {
-						handleHexagonClick(hex)
-						handleClick(hex)
-					}}
-					onMouseEnter={() => setHoveredHex(hex.id)}
-					onMouseLeave={() => setHoveredHex(null)}
-					className='absolute cursor-pointer transition-all duration-200 border-2 hover:bg-cyan-500/30'
-					style={{
-						left: `${hex.x}px`,
-						top: `${hex.y}px`,
-						width: `${hex.size}px`,
-						height: `${hex.size}px`,
-						clipPath:
-							'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
-						borderColor:
-							activeHex === hex.id
-								? 'rgba(255, 255, 255, 0.5)'
-								: hoveredHex === hex.id
-								? 'rgba(255, 255, 255, 0.5)'
-								: 'rgba(0, 255, 255, 0.5)',
-						backgroundColor:
-							hex.status === 1
-								? 'rgba(255, 0, 0, 0.5)'
-								: hoveredHex === hex.id
-								? 'rgba(0, 255, 255, 0.5)'
-								: 'rgba(0, 255, 255, 0.3)',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						padding: 0,
-						transform: `rotate(${hex.rotation || 0}deg)`,
-					}}
-					title={hex.label}
-				>
-					<span className='text-white font-bold text-xl drop-shadow-lg w-[90%] -rotate-[30deg]'>
-						{hex.label}
-					</span>
-				</button>
-			))}
+		<div className='w-full h-screen overflow-hidden'>
+			<div className='w-full h-full fixed top-0 left-0 '>
+				{isLoading && (
+					<LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+				)}
+			</div>
+			{!isLoading && (
+				<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#07072f] to-[#030318]'>
+					<div className='absolute inset-0 bg-linear-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20' />
+					<motion.div
+						className='absolute inset-0'
+						animate={{
+							backgroundPosition: ['0% 0%', '100% 100%'],
+						}}
+						transition={{
+							duration: 500,
+							repeat: Infinity,
+							ease: 'linear',
+						}}
+						style={{
+							backgroundImage: `
+             linear-gradient(rgba(14, 10, 138, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px)
+            `,
+							backgroundSize: '50px 50px',
+						}}
+					/>
+					{[...Array(20)].map((_, index) => (
+						<motion.div
+							key={index}
+							className='absolute w-1 h-1 bg-cyan-400 rounded-full opacity-70'
+							style={{
+								left: `${Math.random() * 100}%`,
+								top: `${Math.random() * 100}%`,
+							}}
+							animate={{
+								y: [0, -20, 0],
+								opacity: [0.3, 1, 0.3],
+							}}
+							transition={{
+								duration: 3,
+								repeat: Infinity,
+								delay: index * 0.1,
+							}}
+						/>
+					))}
+					{hexagonAreas.map(hex => (
+						<button
+							key={hex.id}
+							onClick={() => {
+								handleHexagonClick(hex)
+								handleClick(hex)
+							}}
+							onMouseEnter={() => setHoveredHex(hex.id)}
+							onMouseLeave={() => setHoveredHex(null)}
+							className='absolute cursor-pointer transition-all duration-200 border-2 hover:bg-cyan-500/30'
+							style={{
+								left: `${hex.x}px`,
+								top: `${hex.y}px`,
+								width: `${hex.size}px`,
+								height: `${hex.size}px`,
+								clipPath:
+									'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
+								borderColor:
+									activeHex === hex.id
+										? 'rgba(255, 255, 255, 0.5)'
+										: hoveredHex === hex.id
+										? 'rgba(255, 255, 255, 0.5)'
+										: 'rgba(0, 255, 255, 0.5)',
+								backgroundColor:
+									hex.status === 1
+										? 'rgba(255, 0, 0, 0.5)'
+										: hoveredHex === hex.id
+										? 'rgba(0, 255, 255, 0.5)'
+										: 'rgba(0, 255, 255, 0.3)',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								padding: 0,
+								transform: `rotate(${hex.rotation || 0}deg)`,
+							}}
+							title={hex.label}
+						>
+							<span className='text-white font-bold text-xl drop-shadow-lg w-[90%] -rotate-[30deg]'>
+								{hex.label}
+							</span>
+						</button>
+					))}
+				</div>
+			)}
 		</div>
 	)
 }
