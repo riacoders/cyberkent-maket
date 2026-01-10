@@ -140,23 +140,31 @@ function App() {
 	const [activeHex, setActiveHex] = useState<number | null>(13)
 
 	useEffect(() => {
-		const savedAreas = localStorage.getItem('hexagonAreas')
-		if (savedAreas) {
+		const savedStatuses = localStorage.getItem('hexagonStatuses')
+		let areasToSet = initialHexagonAreas
+		if (savedStatuses) {
 			try {
-				const parsedAreas = JSON.parse(savedAreas)
-				setHexagonAreas(parsedAreas)
+				const statuses = JSON.parse(savedStatuses)
+				areasToSet = initialHexagonAreas.map(hex => {
+					const savedStatus = statuses.find(
+						(s: { id: number; status: number }) => s.id === hex.id
+					)
+					return savedStatus ? { ...hex, status: savedStatus.status } : hex
+				})
 			} catch (error) {
-				console.error('Error parsing hexagonAreas from localStorage:', error)
-				setHexagonAreas(initialHexagonAreas)
+				console.error(
+					'Error parsing hexagon statuses from localStorage:',
+					error
+				)
 			}
-		} else {
-			setHexagonAreas(initialHexagonAreas)
 		}
+		setHexagonAreas(areasToSet)
 	}, [])
 
 	useEffect(() => {
 		if (hexagonAreas.length > 0) {
-			localStorage.setItem('hexagonAreas', JSON.stringify(hexagonAreas))
+			const statuses = hexagonAreas.map(h => ({ id: h.id, status: h.status }))
+			localStorage.setItem('hexagonStatuses', JSON.stringify(statuses))
 		}
 	}, [hexagonAreas])
 
