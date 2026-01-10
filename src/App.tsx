@@ -20,7 +20,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/tog/shes',
+		api: 'http://172.16.200.20:5000/control/tog/shes',
 	},
 	{
 		id: 2,
@@ -30,7 +30,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/tog/elektr',
+		api: 'http://172.16.200.20:5000/control/tog/elektr',
 	},
 	{
 		id: 3,
@@ -40,7 +40,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/tog/antena',
+		api: 'http://172.16.200.20:5000/control/tog/antena',
 	},
 	{
 		id: 4,
@@ -50,7 +50,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/tog/chiroq',
+		api: 'http://172.16.200.20:5000/control/tog/chiroq',
 	},
 	{
 		id: 5,
@@ -60,7 +60,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/airaport/elektr',
+		api: 'http://172.16.200.20:5000/control/airaport/elektr',
 	},
 	{
 		id: 6,
@@ -70,7 +70,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/airaport/jadval',
+		api: 'http://172.16.200.20:5000/control/airaport/jadval',
 	},
 	{
 		id: 7,
@@ -80,7 +80,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/airaport/chiroq',
+		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
 	},
 	{
 		id: 8,
@@ -90,7 +90,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/temiryol/jadval',
+		api: 'http://172.16.200.20:5000/control/temiryol/jadval',
 	},
 	{
 		id: 9,
@@ -100,7 +100,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/temiryol/poyezd',
+		api: 'http://172.16.200.20:5000/control/temiryol/poyezd',
 	},
 	{
 		id: 10,
@@ -110,7 +110,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/temiryol/elektr',
+		api: 'http://172.16.200.20:5000/control/temiryol/elektr',
 	},
 	{
 		id: 11,
@@ -120,7 +120,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/temiryol/chiroq',
+		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
 	},
 	{
 		id: 12,
@@ -130,7 +130,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://192.168.200.241:5000/control/temiryol/chiroq',
+		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
 	},
 ]
 
