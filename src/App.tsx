@@ -90,54 +90,58 @@ function App() {
 	}
 
 	return (
-		<div className='relative w-screen h-screen overflow-hidden bg-linear-to-r from-[#1d43d8] via-[#DC2E56] to-[#3451C3]'>
-			<img
-				src='/image.png'
-				alt='CYBERKENT 3.0 XARITASI'
-				className='absolute inset-0 w-[1366px] h-[896px] object-cover m-auto'
-			/>
+		<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden bg-linear-to-r from-[#1d43d8] via-[#DC2E56] to-[#3451C3]'>
+			<div className='w-[1366px] h-[896px]'>
+				<img
+					src='/image.png'
+					alt='CYBERKENT 3.0 XARITASI'
+					className='absolute inset-0 w-[1366px] h-[896px] object-cover m-auto'
+				/>
 
-			{hexagonAreas.map(hex => (
-				<button
-					key={hex.id}
-					onClick={() => handleHexagonClick(hex)}
-					onMouseEnter={() => setHoveredHex(hex.id)}
-					onMouseLeave={() => setHoveredHex(null)}
-					className='absolute cursor-pointer transition-all duration-200 border-2 hover:bg-cyan-500/30'
-					style={{
-						left: `${hex.x}px`,
-						top: `${hex.y}px`,
-						width: `${hex.size}px`,
-						height: `${hex.size}px`,
-						clipPath:
-							'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
-						borderColor:
-							activeHex === hex.id
-								? 'rgba(255, 255, 255, 0.005)'
-								: hoveredHex === hex.id
-								? 'rgba(255, 255, 255, 0.005)'
-								: 'rgba(0, 255, 255, 0.005)',
-						backgroundColor:
-							activeHex === hex.id
-								? 'rgba(0, 255, 0, 0.005)'
-								: hoveredHex === hex.id
-								? 'rgba(0, 255, 255, 0.005)'
-								: 'transparent',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						padding: 0,
-						transform: `rotate(${hex.rotation || 0}deg)`,
-					}}
-					title={hex.label}
-				>
-					{(hoveredHex === hex.id || activeHex === hex.id) && (
-						<span className='text-white font-bold text-xl drop-shadow-lg w-[90%]'>
-							{hex.label}
-						</span>
-					)}
-				</button>
-			))}
+				<div className='w-[1366px] h-[896px]'>
+					{hexagonAreas.map(hex => (
+						<button
+							key={hex.id}
+							onClick={() => handleHexagonClick(hex)}
+							onMouseEnter={() => setHoveredHex(hex.id)}
+							onMouseLeave={() => setHoveredHex(null)}
+							className='absolute cursor-pointer transition-all duration-200 border-2 hover:bg-cyan-500/30'
+							style={{
+								left: `${hex.x}px`,
+								top: `${hex.y}px`,
+								width: `${hex.size}px`,
+								height: `${hex.size}px`,
+								clipPath:
+									'polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)',
+								borderColor:
+									activeHex === hex.id
+										? 'rgba(255, 255, 255, 0.005)'
+										: hoveredHex === hex.id
+										? 'rgba(255, 255, 255, 0.005)'
+										: 'rgba(0, 255, 255, 0.005)',
+								backgroundColor:
+									activeHex === hex.id
+										? 'rgba(0, 255, 0, 0.005)'
+										: hoveredHex === hex.id
+										? 'rgba(0, 255, 255, 0.005)'
+										: 'transparent',
+								display: 'flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								padding: 0,
+								transform: `rotate(${hex.rotation || 0}deg)`,
+							}}
+							title={hex.label}
+						>
+							{(hoveredHex === hex.id || activeHex === hex.id) && (
+								<span className='text-white font-bold text-xl drop-shadow-lg w-[90%]'>
+									{hex.label}
+								</span>
+							)}
+						</button>
+					))}
+				</div>
+			</div>
 		</div>
 	)
 }
