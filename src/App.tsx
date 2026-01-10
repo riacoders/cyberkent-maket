@@ -90,11 +90,11 @@ function App() {
 	}
 
 	return (
-		<div className='relative w-screen h-screen overflow-hidden'>
+		<div className='relative w-screen h-screen overflow-hidden bg-linear-to-r from-[#1d43d8] via-[#DC2E56] to-[#3451C3]'>
 			<img
 				src='/image.png'
 				alt='CYBERKENT 3.0 XARITASI'
-				className='absolute inset-0 w-full h-full object-cover'
+				className='absolute inset-0 w-[1366px] h-[896px] object-cover m-auto'
 			/>
 
 			{hexagonAreas.map(hex => (
