@@ -128,7 +128,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/antena',
+		api: 'http://172.16.200.20:5000/control/tog/shes',
 	},
 	{
 		id: 12,
