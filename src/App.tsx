@@ -124,7 +124,7 @@ const initialHexagonAreas: HexagonArea[] = [
 	},
 	{
 		id: 10,
-		label: 'CYBERKENT XALQARO AEROPORTI',
+		label: 'CYBERKENT AEROPORTI',
 		x: 832,
 		y: 535,
 		size: 220,
@@ -146,7 +146,7 @@ const initialHexagonAreas: HexagonArea[] = [
 	},
 	{
 		id: 12,
-		label: 'CYBERKENT GES',
+		label: 'CYBERKENT IES',
 		x: 1001,
 		y: 632,
 		size: 220,
