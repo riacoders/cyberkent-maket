@@ -25,7 +25,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/airaport/jadval',
-		logo: './CayberAirPower.png',
+		logo: './CyberPost.png',
 	},
 	{
 		id: 2,
@@ -37,7 +37,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/elektr',
-		logo: './CyberAiraport.png',
+		logo: './CyberBank.png',
 	},
 	{
 		id: 3,
@@ -49,7 +49,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/poyezd',
-		logo: './CyberAuto.png',
+		logo: './CyberLight.png',
 	},
 	{
 		id: 4,
@@ -61,7 +61,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/jadval',
-		logo: './CyberBank.png',
+		logo: './CyberAuto.png',
 	},
 	{
 		id: 5,
@@ -72,7 +72,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
-		logo: './CyberGarden.png',
+		logo: './CyberPizza.png',
 	},
 	{
 		id: 6,
@@ -84,7 +84,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/tog/elektr',
-		logo: './CyberLight.png',
+		logo: './CyberGarden.png',
 	},
 	{
 		id: 7,
@@ -97,7 +97,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
-		logo: './CyberParking.png',
+		logo: './CyberTransport.png',
 	},
 	{
 		id: 8,
@@ -108,7 +108,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/tog/shes',
-		logo: './CyberPizza.png',
+		logo: './CayberAirPower.png',
 	},
 	{
 		id: 9,
@@ -120,7 +120,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/tog/antena',
-		logo: './CyberPost.png',
+		logo: './CyberParking.png',
 	},
 	{
 		id: 10,
@@ -131,7 +131,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/tog/chiroq',
-		logo: './CyberPower.png',
+		logo: 'CyberAiraport.png',
 	},
 	{
 		id: 11,
@@ -153,7 +153,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/airaport/elektr',
-		logo: './CyberTransport.png',
+		logo: './CyberPower.png',
 	},
 ]
 
