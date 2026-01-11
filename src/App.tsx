@@ -87,7 +87,8 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/airaport/elektr',
+
+		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
 	},
 	{
 		id: 8,
@@ -108,7 +109,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 
-		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
+		api: 'http://172.16.200.20:5000/control/tog/antena',
 	},
 	{
 		id: 10,
@@ -138,8 +139,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-
-		api: 'http://172.16.200.20:5000/control/tog/antena',
+		api: 'http://172.16.200.20:5000/control/airaport/elektr',
 	},
 ]
 
