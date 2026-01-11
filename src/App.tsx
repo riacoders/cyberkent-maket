@@ -13,6 +13,7 @@ interface HexagonArea {
 	rotation?: number
 	status: number
 	api: string
+	logo: string
 }
 
 const initialHexagonAreas: HexagonArea[] = [
@@ -25,6 +26,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/airaport/jadval',
+		logo: './CayberAirPower.png',
 	},
 	{
 		id: 2,
@@ -36,6 +38,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/elektr',
+		logo: './CyberAiraport.png',
 	},
 	{
 		id: 3,
@@ -47,6 +50,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/poyezd',
+		logo: './CyberAuto.png',
 	},
 	{
 		id: 4,
@@ -58,6 +62,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/temiryol/jadval',
+		logo: './CyberBank.png',
 	},
 	{
 		id: 5,
@@ -68,6 +73,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
+		logo: './CyberGarden.png',
 	},
 	{
 		id: 6,
@@ -79,6 +85,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/tog/elektr',
+		logo: './CyberLight.png',
 	},
 	{
 		id: 7,
@@ -91,6 +98,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/airaport/chiroq',
+		logo: './CyberParking.png',
 	},
 	{
 		id: 8,
@@ -101,6 +109,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/tog/shes',
+		logo: './CyberPizza.png',
 	},
 	{
 		id: 9,
@@ -112,6 +121,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		status: 0,
 
 		api: 'http://172.16.200.20:5000/control/tog/antena',
+		logo: './CyberPost.png',
 	},
 	{
 		id: 10,
@@ -122,6 +132,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/tog/chiroq',
+		logo: './CyberPower.png',
 	},
 	{
 		id: 11,
@@ -132,6 +143,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/tog/shes',
+		logo: './CyberTrain.png',
 	},
 	{
 		id: 12,
@@ -142,6 +154,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		rotation: 30,
 		status: 0,
 		api: 'http://172.16.200.20:5000/control/airaport/elektr',
+		logo: './CyberTransport.png',
 	},
 ]
 
@@ -272,7 +285,8 @@ function App() {
 							}}
 							title={hex.label}
 						>
-							<span className='text-white font-bold text-xl drop-shadow-lg w-[90%] -rotate-[30deg]'>
+							<span className='text-white font-bold text-xl drop-shadow-lg w-[85%] -rotate-[30deg] flex flex-col items-center justify-center '>
+								<img src={hex.logo} alt='logo' className='w-14' />
 								{hex.label}
 							</span>
 						</button>
