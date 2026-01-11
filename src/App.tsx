@@ -65,7 +65,6 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-
 		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
 	},
 	{
@@ -81,7 +80,8 @@ const initialHexagonAreas: HexagonArea[] = [
 	},
 	{
 		id: 7,
-		label: 'CYBERKENT GES',
+
+		label: 'CYBERKENT AVTOMOBIL ZAVODI',
 		x: 1000,
 		y: 240,
 		size: 220,
@@ -132,13 +132,14 @@ const initialHexagonAreas: HexagonArea[] = [
 	},
 	{
 		id: 12,
-		label: 'CYBERKENT AVTOMOBIL ZAVODI',
+		label: 'CYBERKENT GES',
 		x: 1001,
 		y: 632,
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/temiryol/chiroq',
+
+		api: 'http://172.16.200.20:5000/control/tog/antena',
 	},
 ]
 
