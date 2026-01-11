@@ -87,7 +87,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/tog/shes',
+		api: 'http://172.16.200.20:5000/control/airaport/elektr',
 	},
 	{
 		id: 8,
@@ -97,7 +97,7 @@ const initialHexagonAreas: HexagonArea[] = [
 		size: 220,
 		rotation: 30,
 		status: 0,
-		api: 'http://172.16.200.20:5000/control/airaport/elektr',
+		api: 'http://172.16.200.20:5000/control/tog/shes',
 	},
 	{
 		id: 9,
