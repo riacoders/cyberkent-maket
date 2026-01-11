@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import LoadingScreen from './components/loading-screen'
-import Header from './components/header/index';
 import { motion } from 'framer-motion'
-
+import Header from './components/header'
 
 interface HexagonArea {
 	id: number
@@ -228,7 +227,6 @@ function App() {
 			</div>
 			{!isLoading && (
 				<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden '>
-				
 					{[...Array(20)].map((_, index) => (
 						<motion.div
 							key={index}
