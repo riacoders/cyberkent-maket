@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import LoadingScreen from './components/loading-screen'
+import Header from './components/header/index';
 import { motion } from 'framer-motion'
+
 
 interface HexagonArea {
 	id: number
@@ -205,32 +207,15 @@ function App() {
 
 	return (
 		<div className='w-full h-screen overflow-hidden'>
+			<Header />
 			<div className='w-full h-full fixed top-0 left-0 '>
 				{isLoading && (
 					<LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
 				)}
 			</div>
 			{!isLoading && (
-				<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#07072f] to-[#030318]'>
-					<div className='absolute inset-0 bg-linear-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20' />
-					<motion.div
-						className='absolute inset-0'
-						animate={{
-							backgroundPosition: ['0% 0%', '100% 100%'],
-						}}
-						transition={{
-							duration: 500,
-							repeat: Infinity,
-							ease: 'linear',
-						}}
-						style={{
-							backgroundImage: `
-             linear-gradient(rgba(14, 10, 138, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0,255,255,0.1) 1px, transparent 1px)
-            `,
-							backgroundSize: '50px 50px',
-						}}
-					/>
+				<div className='relative w-screen h-screen flex items-center justify-center overflow-hidden '>
+				
 					{[...Array(20)].map((_, index) => (
 						<motion.div
 							key={index}
