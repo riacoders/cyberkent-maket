@@ -300,7 +300,7 @@ function App() {
 							}}
 							title={hex.label}
 						>
-							<span className='text-white font-bold text-xl drop-shadow-lg w-[85%] -rotate-[30deg] flex flex-col items-center justify-center '>
+							<span className='text-white font-bold text-xl drop-shadow-lg w-[85%] -rotate-[30deg]  flex flex-col items-center justify-center '>
 								<img src={hex.logo} alt='logo' className='w-14' />
 								{hex.label}
 							</span>
